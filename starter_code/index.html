@@ -8,21 +8,24 @@
 
   <!-- link the Font Awesome stylesheet - CDN -->
   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- link your styles -->
   <link rel="stylesheet" href="./stylesheets/style.css" />
 
   <link rel="icon" type="image/x-icon" href="./images/slack-icon.png">
   <title>Slack is your digital HQ | Slack</title>
+
 </head>
 
-<body>
+<body class="bg-fuchsia-950">
   <!-- NAVBAR -->
-  <nav>
+  <!-- Tiene que ser un flex donde los items estén centrados en el cross axis. Los items están separadas y además tiene un padding -->
+  <nav class="flex justify-between p-4 items-center:" >
     <div>
-      <img src="./images/slack-logo.png" alt="Slack logo" />
+      <img src="./images/slack-logo.png" alt="Slack logo" class="w w-1/3"  />
 
-      <ul>
+      <ul class="hidden">
         <li>
           <a href="#">Product</a>
         </li>
@@ -38,7 +41,7 @@
       </ul>
     </div>
 
-    <div>
+    <div class="flex justify-between gap-3">
       <button>
         <img src="./images/icon-search.png" alt="Search icon">
       </button>
@@ -62,15 +65,19 @@
   <!-- HEADER -->
   <header>
     <div>
-      <h1>Great teamwork starts with a digital HQ</h1>
+       <!-- Texto en blanco, mucho más grande que los demás, con la fuente algo negrita y el texto centrado -->
+      <h1 class="text-white text-center text-4xl font-semibold py-4">Great teamwork starts with a digital HQ</h1>
 
-      <p>Slack is free to try for as long as you'd like.</p>
+      <p class="text-white text-center"><span class="text-yellow-600 font-bold">Slack is free to try</span> for as long as you'd like.</p>
 
-      <div>
-        <button>Sign up with email</button>
-
-        <button>
-          <img src="./images/logo-google.png" alt="Google logo" />
+      <!-- Este DIV tiene un margin top, y todos sus hijos estan separados un poco entre ellos space-y-2 -->
+      <div class="grid gap-2 justify-center">
+        <!-- tiene un fondo blanco, un color texto fuchsia, esta en mayusuclas, negrita, quiero convertirlo en un elemento de tipo bloque (para que ocupe todo el ancho disponible), es posible que necesiteis la regla w-full, (width 100%), tiene algo de padding y tiene las esquinas redondeadas -->
+        <button class="p-2  bg-slate-300">Sign up with email</button>
+        
+        <!-- Este es complicadom se puede conseguir con posicionamiento relativo y absoluto-->
+        <button class="flex bg-sky-700 p-2 text-white items-center">
+          <img src="./images/logo-google.png" alt="Google logo" class="w w-1/5 p-4 bg-slate-300 " />
           <span>Sign up with Google</span>
         </button>
       </div>
@@ -138,7 +145,9 @@
 
   </main>
 
-  <footer>
+ <!-- Intentad maquetar el Footer con tailwind -->
+ <footer>
+  <!-- Para separar los elementos entre si usad space-y -->
     <ul>
       <li>Status</li>
       <li>Privacy</li>
@@ -151,6 +160,7 @@
 
     <hr>
 
+    <!-- es un flex, aplicadlo con tailwind -->
     <ul>
       <li>
         <i class="fab fa-twitter"></i>
